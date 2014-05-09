@@ -11,6 +11,7 @@ describe User do
   #it "should responed to name" do
   # expect (@user).to respond_to(:name)
   #end
+  it { should respond_to(:email) }
 
   
 end
