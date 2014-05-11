@@ -30,4 +30,11 @@ describe User do
 	  before { @user.email = " " }
 	  it { should_not be_valid }
 	end
+  
+  #Not valid, name too long	
+  describe "should not be valid with too long name" do
+    before { @user.name = "z" * 16 }
+    it { should_not be_valid }
+  end
+  
 end
