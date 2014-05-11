@@ -79,6 +79,11 @@ describe User do
     it { should_not be_valid }
   end
   
+   describe "password too short" do
+	before { @user.password = "z" * 5, @user.password_confirmation = "z" * 5}
+	it { should be_invalid }
+   end
+  
   describe "should not be valid without password" do
     before do
       @user = User.new(name: "Jarek", email: "jarek@bdimension.com", password: " ", password_confirmation: " ")
@@ -111,4 +116,6 @@ describe User do
 		it { expect(user_for_invalid_password).to be_false }
 	  end
 	end
+	
+	
 end
