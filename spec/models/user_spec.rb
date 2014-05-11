@@ -59,4 +59,12 @@ describe User do
     end
   end
   
+  describe "should not be valid when email is taken" do
+    before do
+      duplicate_email = @user.dup #duplicates the user
+      duplicate_email.save
+    end
+    it { should_not be_valid }
+  end
+  
 end
