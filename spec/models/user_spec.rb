@@ -49,4 +49,14 @@ describe User do
     end
   end
   
+  describe "email format should be valid" do
+    it "should be valid" do
+      emails = %w[jarek@konie.PL kon.kon@sss.is a@kon.com Jarek_Kon-Kuba@kon.a.org kon-ww@kon.com]
+      emails.each do |valid_email|
+        @user.email = valid_email
+        expect(@user).to be_valid
+      end
+    end
+  end
+  
 end
