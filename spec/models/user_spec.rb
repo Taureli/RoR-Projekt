@@ -16,6 +16,10 @@ describe User do
   #Check if email is saved
   it { should respond_to(:email) }
   
+  #Check if responds to password
+  it { should respond_to(:password_digest) }
+  
+  
   #Check if is valid
   it { should be_valid }
   
@@ -62,7 +66,7 @@ describe User do
   describe "should not be valid when email is taken" do
     before do
       duplicate_email = @user.dup #duplicates the user
-      duplicate_email.save
+      duplicate_email.save 
     end
     it { should_not be_valid }
   end
