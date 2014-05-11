@@ -83,4 +83,9 @@ describe User do
     it { should_not be_valid }
   end
   
+  describe "should not be valid with mismatch" do
+    before { @user.password_confirmation = "other" }
+    it { should_not be_valid }
+  end
+  
 end
