@@ -18,6 +18,11 @@ describe User do
   
   #Check if is valid
   it { should be_valid }
-
+  
+  #Not valid without name
+	describe "should not be valid without name presence" do
+	  before { @user.name = " " }
+	  it { should_not be_valid }
+	end
   
 end
