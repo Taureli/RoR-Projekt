@@ -37,4 +37,16 @@ describe User do
     it { should_not be_valid }
   end
   
+  
+  describe "email format should be invalid" do
+    it "should be invalid" do
+      emails = %w[email@adam,wp jarek_at_kuba.pl jarek.konie@konie.
+                     konie@kon_kon.com wzzxxz@zz/aa.com faxzxz@kon+kon.org ]
+      emails.each do |invalid_email|
+        @user.email = invalid_email
+        expect(@user).not_to be_valid
+      end
+    end
+  end
+  
 end
