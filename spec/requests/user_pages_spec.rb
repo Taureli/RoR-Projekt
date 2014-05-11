@@ -32,7 +32,21 @@ describe "User pages" do
         expect { click_button submit }.not_to change(User, :count)
       end
     end
-
+	
+	#Define valid input
+    describe "valid input" do
+      before do
+        fill_in "Name",         with: "Jarek Konio"
+        fill_in "Email",        with: "konie@bdimension.com"
+        fill_in "Password",     with: "koniowo"
+        fill_in "Confirmation", with: "koniowo"
+      end
+	  #successful user creation, user count increases
+      it "should create a new user" do
+		#Capybara "makes" the click on submit
+        expect { click_button submit }.to change(User, :count).by(1)
+      end
+    end
   end
   
 end
