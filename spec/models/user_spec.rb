@@ -91,4 +91,17 @@ describe User do
     it { should_not be_valid }
   end
   
+  #Authenticate the user, if the user email matches the password
+	describe "authenticate the user" do
+	  before { @user.save }
+	  #Assign a user found by email to found_user variable
+	  let(:found_user) { User.find_by(email: @user.email) }
+	  
+	  #Authenticate if the email user(found_user) equals user password
+	  describe "password should be valid" do
+		it { should eq found_user.authenticate(@user.password) }
+	  end
+
+
+	end
 end
