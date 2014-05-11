@@ -24,5 +24,10 @@ describe User do
 	  before { @user.name = " " }
 	  it { should_not be_valid }
 	end
-  
+	
+   #Not valid without email
+	describe "should not be valid without email presence" do
+	  before { @user.email = " " }
+	  it { should_not be_valid }
+	end
 end
