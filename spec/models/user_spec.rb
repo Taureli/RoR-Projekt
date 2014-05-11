@@ -76,4 +76,11 @@ describe User do
     it { should_not be_valid }
   end
   
+  describe "should not be valid without password" do
+    before do
+      @user = User.new(name: "Jarek", email: "jarek@bdimension.com", password: " ", password_confirmation: " ")
+    end
+    it { should_not be_valid }
+  end
+  
 end
