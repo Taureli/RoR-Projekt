@@ -102,6 +102,13 @@ describe User do
 		it { should eq found_user.authenticate(@user.password) }
 	  end
 
-
+	  describe "password should be invalid" do
+		#Assign 
+		let(:user_for_invalid_password) { found_user.authenticate("invalid") }
+		#The found user should not equal with the valid authentication
+		it { should_not eq user_for_invalid_password }
+		#Expect the user the user authentication to be false
+		it { expect(user_for_invalid_password).to be_false }
+	  end
 	end
 end
