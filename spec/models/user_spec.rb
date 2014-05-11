@@ -25,6 +25,9 @@ describe User do
   #Check if it responds to the password confirmation
   it { should respond_to(:password_confirmation) }
   
+  #Check if responds to the email-password authentication
+  it { should respond_to(:authenticate) }
+  
   #Check if is valid
   it { should be_valid }
   
