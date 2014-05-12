@@ -16,6 +16,10 @@ module SessionsHelper
     @current_user = user
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   #Find current user using 'remember_token'
   def current_user
     remember_token = User.digest(cookies[:remember_token])			#decrypting hashed token
