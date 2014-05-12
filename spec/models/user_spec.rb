@@ -24,6 +24,9 @@ describe User do
   
   #Check if it responds to the password confirmation
   it { should respond_to(:password_confirmation) }
+
+  #Check for response to session token:
+  it { should respond_to(:remember_token) }
   
   #Check if responds to the email-password authentication
   it { should respond_to(:authenticate) }
@@ -116,6 +119,11 @@ describe User do
 		it { expect(user_for_invalid_password).to be_false }
 	  end
 	end
-	
+
+  #Check if user has assigned token before saving
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
+  end	
 	
 end
