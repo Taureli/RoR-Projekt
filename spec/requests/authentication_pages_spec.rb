@@ -4,7 +4,7 @@ describe "Authentication" do
 
   subject { page }
 
-  describe "sign-in" do
+  describe "signin" do
     before { visit signin_path }
 
     it { should have_content('Sign in') }
@@ -28,7 +28,7 @@ describe "Authentication" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
       end
-      
+
     end
     
     
