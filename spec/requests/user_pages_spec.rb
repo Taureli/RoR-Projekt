@@ -48,7 +48,9 @@ describe "User pages" do
       end
     end
 
-    describe "with valid information" do
+  end
+
+  describe "with valid information" do
 
     	#check if everythin is in place after logging in
       describe "after saving the user" do
@@ -61,7 +63,5 @@ describe "User pages" do
       end
 
     end
-
-  end
   
 end

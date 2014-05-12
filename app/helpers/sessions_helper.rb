@@ -22,4 +22,12 @@ module SessionsHelper
     @current_user ||= User.find_by(remember_token: remember_token)	#find_by is called once, then uses @current_user
   end
 
+  #Delete token & set current user to nil upon logout
+  def sign_out
+    current_user.update_attribute(:remember_token,
+                                  User.digest(User.new_remember_token))
+    cookies.delete(:remember_token)
+    self.current_user = nil
+  end
+
 end
