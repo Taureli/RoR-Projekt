@@ -147,4 +147,26 @@ describe User do
     its(:remember_token) { should_not be_blank }
   end	
 	
+
+
+ describe "gists associations" do
+
+    before { @user.save }
+    let!(:older_gist) do
+      FactoryGirl.create(:gist, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_gist) do
+      FactoryGirl.create(:gist, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right microposts in the right order" do
+      expect(@user.gists.to_a).to eq [newer_gist, older_gist]
+    end
+  end
+
+
+
+
+
+
 end
