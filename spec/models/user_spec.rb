@@ -33,6 +33,7 @@ describe User do
 
 
   it { should respond_to(:admin) }
+  it { should respond_to(:gists) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -49,7 +50,7 @@ describe User do
 
 
 
-  
+
   
   #Check if is valid
   it { should be_valid }

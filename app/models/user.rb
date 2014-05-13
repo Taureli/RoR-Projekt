@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :gists
 	before_save { self.email = email.downcase } #make all emails lowercase before saving
 	before_create :create_remember_token		#create token before creating user
 
