@@ -24,7 +24,7 @@ describe Gist do
   end
 
   describe "with content that is too long" do
-    before { @micropost.content = "a" * 1201 }
+    before { @gist.content = "a" * 1201 }
     it { should_not be_valid }
   end
 
