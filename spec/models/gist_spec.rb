@@ -17,4 +17,15 @@ describe Gist do
     before { @gist.user_id = nil }
     it { should_not be_valid }
   end
+
+ describe "with blank content" do
+    before { @gist.content = " " }
+    it { should_not be_valid }
+  end
+
+  describe "with content that is too long" do
+    before { @micropost.content = "a" * 1201 }
+    it { should_not be_valid }
+  end
+
 end
