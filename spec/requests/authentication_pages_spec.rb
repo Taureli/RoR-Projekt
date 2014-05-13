@@ -67,6 +67,21 @@ describe "Authentication" do
           end
 
 
+      describe "in the Gists controller" do
+
+        describe "submitting to the create action" do
+          before { post gists_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete gist_path(FactoryGirl.create(:gist)) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+
+
+
 
       describe "in the Users controller" do
 
