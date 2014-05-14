@@ -6,7 +6,18 @@
   <span class="language">
     Language: <%= gist.lang %>
   </span>
+  </br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(gist.created_at) %> ago.
   </span>
+  
+
+
+<% if current_user?(gist.user) %>
+<%= link_to 'delete', gist, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger",style:"float: right" %>
+<% end %>
+</br>  
+<span> </br>  
+</span>
+  
 </li>

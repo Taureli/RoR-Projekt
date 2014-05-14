@@ -5,6 +5,7 @@ describe "GistPages" do
 
   let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
+ 
 
   describe "gist creation" do
     before { visit root_path }
