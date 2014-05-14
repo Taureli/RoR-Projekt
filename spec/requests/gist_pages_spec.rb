@@ -25,7 +25,7 @@ describe "GistPages" do
 
       before { fill_in 'gist_snippet', with: "<h1> sss </h1>"}
       before { fill_in 'gist_description', with: "ZXZXZX" }
-      before { fill_in 'gist_lang', with: "html" }
+      before { select 'html', :from => 'gist_lang' }
       
       it "should create a gist" do
         expect { click_button "Post" }.to change(Gist, :count).by(1)

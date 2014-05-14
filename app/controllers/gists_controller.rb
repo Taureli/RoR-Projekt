@@ -20,6 +20,6 @@ class GistsController < ApplicationController
   private
 
     def gist_params
-      params.require(:gist).permit(:snippet)
+      params.require(:gist).permit(:snippet, :lang, :description)
     end
 end
