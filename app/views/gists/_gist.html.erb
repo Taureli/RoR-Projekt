@@ -1,5 +1,11 @@
 <li>
+  <span class="description">
+	Description: <%= gist.description %>
+  </span>
   <span class="snippet"><%= raw Pygments.highlight(gist.snippet, lexer: gist.lang) %></span>
+  <span class="language">
+    Language: <%= gist.lang %>
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(gist.created_at) %> ago.
   </span>

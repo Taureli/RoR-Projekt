@@ -1,9 +1,21 @@
 <%= form_for(@gist) do |f| %>
+
+<% lex = Pygments::Lexer.all.select{|y| !(y.filenames.empty?)}.map{|x|[x.name, x.filenames.first.gsub('*','')]}.sort %>
+<%
+  all_lexers = Pygments.lexers.flatten.select.with_index(offset = 0) { |x,i| i % 2 == 0 }.sort
+  all_lexers = all_lexers.delete_if { |x| x =~ /.\s./ }
+  all_lexers = all_lexers.map { |x| x.downcase }
+%>
+
+
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_field :description, placeholder: "Description" %>
     <%= f.text_area :snippet, placeholder: "Create new gist..." %>
-    <%= f.text_field :lang, placeholder: "Language" %>
+  </div>
+  <div class="field">
+      <%= f.label :lang %><br>
+      <%= f.select :lang, all_lexers %>
   </div>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 <% end %>
