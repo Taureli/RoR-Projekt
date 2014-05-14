@@ -1,6 +1,8 @@
 
 [![Build Status](https://travis-ci.org/Taureli/RoR-Projekt.svg?branch=master)](https://travis-ci.org/Taureli/RoR-Projekt)
 
+Application on Shelly Cloud: http://rubyonunicorns.shellyapp.com
+
 == 
 README
 
