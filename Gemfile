@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
-#ruby-gemset=railstutorial_rails_4_0
+
+gem 'pygments.rb'
+gem 'redcarpet'
+gem 'quiet_assets'
 
 gem 'bcrypt-ruby', '3.1.2'
 gem 'rails', '4.0.5'

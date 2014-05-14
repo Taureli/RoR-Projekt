@@ -7,7 +7,7 @@ class GistsController < ApplicationController
  def create
     @gist = current_user.gists.build(gist_params)
     if @gist.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Gist created!"
       redirect_to root_url
     else
       render 'static_pages/home'
@@ -20,6 +20,6 @@ class GistsController < ApplicationController
   private
 
     def gist_params
-      params.require(:gist).permit(:content)
+      params.require(:gist).permit(:snippet)
     end
 end

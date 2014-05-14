@@ -23,7 +23,10 @@ describe "GistPages" do
 
     describe "with valid information" do
 
-      before { fill_in 'gist_content', with: "Lorem ipsum" }
+      before { fill_in 'gist_snippet', with: "<h1> sss </h1>"}
+      before { fill_in 'gist_description', with: "ZXZXZX" }
+      before { fill_in 'gist_lang', with: "html" }
+      
       it "should create a gist" do
         expect { click_button "Post" }.to change(Gist, :count).by(1)
       end

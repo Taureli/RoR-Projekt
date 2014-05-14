@@ -8,8 +8,8 @@ describe "User pages" do
   describe "index" do
     before do
       sign_in FactoryGirl.create(:user)
-      FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
-      FactoryGirl.create(:user, name: "Ben", email: "ben@example.com")
+      FactoryGirl.create(:user, name: "Konik", email: "jarek@konie.com")
+      FactoryGirl.create(:user, name: "Konik", email: "kon@konie.com")
       visit users_path
     end
 
@@ -67,15 +67,15 @@ describe "User pages" do
   
   describe "profile page" do
 	  let(:user) { FactoryGirl.create(:user) }
-    let!(:m1) { FactoryGirl.create(:gist, user: user, content: "Foo") }
-    let!(:m2) { FactoryGirl.create(:gist, user: user, content: "Bar") }
+    let!(:m1) { FactoryGirl.create(:gist, user: user, snippet: "Foo", description: "This is html", lang: "html") }
+    let!(:m2) { FactoryGirl.create(:gist, user: user, snippet: "Bar", description: "This is html", lang: "html") }
 	  before { visit user_path(user) }
 
 	  it { should have_content(user.name) }
 	  it { should have_title(user.name) }
     describe "gists" do
-      it { should have_content(m1.content) }
-      it { should have_content(m2.content) }
+      it { should have_content(m1.snippet) }
+      it { should have_content(m2.snippet) }
       it { should have_content(user.gists.count) }
     end
   end
@@ -138,8 +138,8 @@ describe "edit" do
 
     describe "with valid information" do
 
-      let(:new_name)  { "New Name" }
-      let(:new_email) { "new@example.com" }
+      let(:new_name)  { "Konik" }
+      let(:new_email) { "kon@unicorns.pl" }
       before do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
