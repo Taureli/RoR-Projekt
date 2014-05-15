@@ -5,23 +5,20 @@ Ruby On Unicorns
 
 Ruby version: 2.0.0
 
+###Zespół:
+* Jarosław Cimoch
+* Krzysztof Lamkiewicz
+* Jakub Karolczak
+
 ###Opis aplikacji:
-Ruby On Unicorns to najlepsze i jedyne w swojej klasie rozwiązanie na rynku zarówno polskim i zagranicznym. 
-Dzięki wykorzystaniu najlepszych technologii oraz Jedynego Prawdziwego Języka Ruby udało nam się utworzyć ten oto niesamowity projekt!
-Pytacie Państwo co takiego potrafi nasza aplikacja?
-Odpowiedź jest banalnie prosta! Pamiętacie może nasz poprzedni hit Internetu: myGists?
-Tak?! Ta aplikacja robi dokładnie to samo! A nawet więcej!
-Tylko teraz i tylko dzięki naszej aplikacji Ruby On Unicorns możecie założyć swoje własne konto Ruby On Unicorns i tworzyć na nim swoje własne gisty!
+Na potrzeby tego projektu napisaliśmy od nowa program o tematyce "myGists", tym razem bazując silnie na testach przed napisaniem odpowiedniego kodu programu.
 
-Ale, ale! Najważniejsze jest nie to, co nasza aplikacja robi, ale to JAK ona to robi!
-A robi to niezawodnie! Dlaczego tak jest? Ponieważ została napisana Jedyną Słuszną Metodą Programowania - bazującą na testach!
-Podczas tworzenia aplikacji Ruby On Unicorns napisaliśmy nie 5, nie 10, ani nawet nie 50 testów!
-Aż 96 testów przyczyniło się do tego wspaniałego sukcesu jakim jest Ruby On Unicorns!!!
+Łącznie napisaliśmy 96 testów, z których każdy wykonuje się poprawnie.
 
-Tylko teraz, w promocyjnej cenie!
+Dodatkowo do funkcjonalności samej aplikacji dodaliśmy możliwość rejestracji i logowania, a gisty wyświetlane są na koncie autora.
 
-Zadzwoń i zamów!
-
+###Aplikacja na Shelly Cloud:
+http://rubyonunicorns.shellyapp.com
 
 ###Wykorzystane gemy:
 * 'pygments.rb'
@@ -48,6 +45,3 @@ Zadzwoń i zamów!
 * 'pg', '0.15.1'
 * 'rails_12factor', '0.0.2'
 * 'shelly-dependencies'
-
-###Aplikacja na Shelly Cloud:
-http://rubyonunicorns.shellyapp.com
